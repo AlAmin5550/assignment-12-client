@@ -1,0 +1,22 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 227 218" width="1000" height="960">
+	<title>New Project</title>
+	<defs>
+		<clipPath clipPathUnits="userSpaceOnUse" id="cp1">
+			<path d="m0 0h227v218h-227z"/>
+		</clipPath>
+	</defs>
+	<style>
+		.s0 { fill: #4dd0e1 } 
+		.s1 { fill: #00acc1 } 
+		.s2 { fill: #546e7a } 
+		.s3 { fill: #455a64 } 
+	</style>
+	<g id="Artboard 1" clip-path="url(#cp1)">
+		<path id="&lt;Path&gt;" class="s0" d="m103.1 45.2v61.1h61.1z"/>
+		<path id="&lt;Path&gt;" class="s1" d="m164.2 106.3h-61.1v61.1z"/>
+		<path id="&lt;Path&gt;" class="s2" d="m115 33.4l-73 72.9h73z"/>
+		<path id="&lt;Path&gt;" class="s3" d="m42 106.3l73 73v-73z"/>
+		<path id="&lt;Path&gt;" class="s0" d="m115 18.7v14.7l73 72.9-73 73v14.7l87.7-87.7z"/>
+		<path id="&lt;Path&gt;" class="s1" d="m42 106.3l73-72.9v-14.7l-87.7 87.6 87.7 87.7v-14.7z"/>
+	</g>
+</svg>

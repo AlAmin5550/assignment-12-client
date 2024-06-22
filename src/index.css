@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body {
+  font-family: "Montserrat", sans-serif;
+}
+.aws-btn {
+  --button-default-height: 44px;
+  --button-default-font-size: 14px;
+  --button-default-border-radius: 4px;
+  --button-horizontal-padding: 16px;
+  --button-raise-level: 4px;
+  --button-hover-pressure: 1;
+  --transform-speed: 0.15s;
+  --button-secondary-color: #f2f6f9;
+  --button-secondary-color-dark: #00acc1;
+  --button-secondary-color-light: #77bad5;
+  --button-secondary-color-hover: #e1eaf1;
+  --button-secondary-color-active: #cfdee9;
+  --button-secondary-border: 2px solid #00acc1;
+}
