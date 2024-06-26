@@ -47,7 +47,7 @@ const Pricing = () => {
                     <div className="text-center">
                         <div className="text-lg font-semibold">Silver</div>
                         <div className="flex items-center justify-center mt-2">
-                            <div className="mr-1 text-5xl font-bold">$28</div>
+                            <div className="mr-1 text-5xl font-bold">$1000</div>
                             <div className="text-gray-700">/ mo</div>
                         </div>
                         <div className="mt-2 space-y-3">
@@ -57,7 +57,7 @@ const Pricing = () => {
                         </div>
                     </div>
                     <div>
-                        <Link to="/payment/:28"><button className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-[#77bad5] rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">Buy Now</button></Link>
+                        <Link to="/payment/1000"><button className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-[#77bad5] rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">Buy Now</button></Link>
                         
                         <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
                             For payment related problem contact the Officials.
@@ -73,7 +73,7 @@ const Pricing = () => {
                     <div className="text-center">
                         <div className="text-lg font-semibold">Gold</div>
                         <div className="flex items-center justify-center mt-2">
-                            <div className="mr-1 text-5xl font-bold">$58</div>
+                            <div className="mr-1 text-5xl font-bold">$1500</div>
                             <div className="text-gray-700">/ mo</div>
                         </div>
                         <div className="mt-2 space-y-3">
@@ -83,7 +83,7 @@ const Pricing = () => {
                         </div>
                     </div>
                     <div>
-                    <Link to="/payment/:58"><button className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-[#77bad5] rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">Buy Now</button></Link>
+                    <Link to="/payment/1500"><button className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-[#77bad5] rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">Buy Now</button></Link>
                         <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
                             For payment related problem contact the Officials.
                         </p>
@@ -93,7 +93,7 @@ const Pricing = () => {
                     <div className="text-center">
                         <div className="text-lg font-semibold">Platinum</div>
                         <div className="flex items-center justify-center mt-2">
-                            <div className="mr-1 text-5xl font-bold">$78</div>
+                            <div className="mr-1 text-5xl font-bold">$2000</div>
                             <div className="text-gray-700">/ mo</div>
                         </div>
                         <div className="mt-2 space-y-3">
@@ -103,7 +103,7 @@ const Pricing = () => {
                         </div>
                     </div>
                     <div>
-                    <Link to="/payment/:78"><button className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-[#77bad5] rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">Buy Now</button></Link>
+                    <Link to="/payment/2000"><button className="inline-flex items-center justify-center w-full h-12 px-6 mt-6 font-medium tracking-wide text-white transition duration-200 bg-[#77bad5] rounded shadow-md hover:bg-gray-900 focus:shadow-outline focus:outline-none">Buy Now</button></Link>
                         <p className="max-w-xs mt-6 text-xs text-gray-600 sm:text-sm sm:text-center sm:max-w-sm sm:mx-auto">
                             For payment related problem contact the Officials.
                         </p>

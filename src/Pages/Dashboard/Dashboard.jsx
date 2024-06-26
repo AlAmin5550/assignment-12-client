@@ -5,13 +5,15 @@ import { IoBookmarkOutline,  IoCartOutline, IoHomeOutline, IoSearch } from "reac
 import { MdOutlineReviews } from "react-icons/md";
 import { LuCalendarClock } from "react-icons/lu";
 import { BiSolidDish } from "react-icons/bi";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Dashboard = () => {
-    const isAdmin = true;
+    const [isAdmin] = useAdmin();
+    // const isAdmin = false;
     return (
         <div className="flex">
-        <div className="w-64 min-h-screen bg-[#77bad5] bg-opacity-40">
-            <ul className="menu p-4 space-y-3">
+        <div className="w-40 min-h-screen bg-[#77bad5] bg-opacity-40 lg:w-64">
+            <ul className="menu lg:p-4 lg:space-y-3">
                 {
                     isAdmin ? <>
                         <li>
@@ -24,29 +26,29 @@ const Dashboard = () => {
                             <NavLink to="/dashboard/addItem"><FaUtensils/> Add Meal</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/dashboard/manageBookings"><FaBook /> All Meal</NavLink>
+                            <NavLink to="/dashboard/manageMeals"><FaBook /> All Meal</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/dashboard/allUsers"><MdOutlineReviews/>  All Reviews</NavLink>
+                            <NavLink to="/dashboard/allReviews"><MdOutlineReviews/>  All Reviews</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/dashboard/allUsers"><BiSolidDish/> Serve Meals</NavLink>
+                            <NavLink to="/dashboard/serveMeals"><BiSolidDish/> Serve Meals</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/dashboard/allUsers"><LuCalendarClock/> Upcoming Meals</NavLink>
+                            <NavLink to="/dashboard/upcomingMeals"><LuCalendarClock/> Upcoming Meals</NavLink>
                         </li>
                     </> : <>
                         <li>
-                            <NavLink to="/dashboard/userHome"><FaUser/> My Profile</NavLink>
+                            <NavLink to="/dashboard/usersHome"><FaUser/> My Profile</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/dashboard/cart"><IoCartOutline></IoCartOutline> Requested Meals</NavLink>
+                            <NavLink to="/dashboard/usersRequests"><IoCartOutline></IoCartOutline> Requested Meals</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/dashboard/cart"><MdOutlineReviews/> My Reviews</NavLink>
+                            <NavLink to="/dashboard/usersReviews"><MdOutlineReviews/> My Reviews</NavLink>
                         </li>
                         <li>
-                            <NavLink to="/dashboard/UserPayments"><IoBookmarkOutline /> Payments History</NavLink>
+                            <NavLink to="/dashboard/userPayments"><IoBookmarkOutline /> Payments History</NavLink>
                         </li>
                     </>
                 }

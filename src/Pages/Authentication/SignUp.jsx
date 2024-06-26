@@ -25,7 +25,6 @@ const SignUp = () => {
             email: data.email,
             badge: 'bronze'
         }
-        console.log(user, data.photo)
         createUser(data.email, data.password)
             .then((result) => {
                 updateProfile(result.user, {
@@ -34,14 +33,12 @@ const SignUp = () => {
                 axiosPublic.post('/users', user)
                     .then(res => {
                         if (res.data.insertedId) {
-                            console.log("user added to database");
                             toast.success('Sign Up Successful!')
                             reset();
                             navigate('/')
                         }
                     })
-            }).catch((err) => {
-                console.log(err)
+            }).catch(() => {
 
             });
     }

@@ -2,29 +2,31 @@ import { Link, NavLink } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 import logo from "../../assets/SVG/Logo.svg"
 import useAuth from "../../Hooks/useAuth";
+import useAdmin from "../../Hooks/useAdmin";
 
 const Navbar = () => {
     const {user, logOut} = useAuth();
+    const [isAdmin] =useAdmin();
     const links =
     <>
 
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/allMeals">Meals</NavLink></li>
-        <li><NavLink to="/allJobs">Upcoming</NavLink></li>
+        <li><NavLink to="/upcoming">Upcoming</NavLink></li>
         {
-            user?.email ? <> 
-                <li><NavLink to="/dashboard">Dashboard</NavLink></li>
-                </> : ""
+            user && isAdmin && <li><Link to="/dashboard/adminHome">Dashboard</Link></li>
         }
-
+        {
+            user && !isAdmin && <li><Link to="/dashboard/usersHome">Dashboard</Link></li>
+        }
     </>
     const handleSignOut = () =>{
         logOut()
-        .then((result) => {
-            console.log(result)
+        .then(() => {
+            // console.log(result)
             
-        }).catch((err) => {
-            console.log(err)
+        }).catch(() => {
+            // console.log(err)
         });
     }
     return (

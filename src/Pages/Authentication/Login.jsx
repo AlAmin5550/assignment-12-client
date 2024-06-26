@@ -16,16 +16,13 @@ const Login = () => {
         reset,
     } = useForm();
     const onSubmit = (data) =>{
-        console.log(data.email,data.password)
         signIn(data.email,data.password)
-        .then(result=>{
-            console.log(result);
+        .then(()=>{
             toast.success('Sign in Successful!');
             reset();
             navigate(from, { replace: true })
         })
-        .catch(err=>{
-            console.log(err)
+        .catch(()=>{
         })
 
 

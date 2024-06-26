@@ -10,7 +10,6 @@ const AllMeals = () => {
     const [search, setSearch] = useState('');
     const { register, handleSubmit } = useForm();
     const onSubmit = async (data) => {
-        console.log(data.search, data.category)
         setCategory(data.category)
         setSearch(data.search)
     }

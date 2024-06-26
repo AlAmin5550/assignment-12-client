@@ -1,20 +1,21 @@
 import { Helmet } from "react-helmet-async";
 import DashboardTitle from "../../../Components/Shared/DashboardTitle";
-import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import { MdAdminPanelSettings } from "react-icons/md";
 import Swal from "sweetalert2";
+import useUser from "../../../Hooks/useUser";
 
 
 const AllUsers = () => {
     const axiosSecure = useAxiosSecure();
-    const {refetch,data: users} = useQuery({
-        queryKey:['users'],
-        queryFn:async () =>{
-            const res = await axiosSecure.get('/users')
-            return res.data;
-        }
-    })
+    // const {refetch,data: users} = useQuery({
+    //     queryKey:['users'],
+    //     queryFn:async () =>{
+    //         const res = await axiosSecure.get('/users')
+    //         return res.data;
+    //     }
+    // })
+    const [users, refetch] = useUser();
     const handleAdmin = user => {
         axiosSecure.patch(`/users/admin/${user._id}`)
         .then(res=>{

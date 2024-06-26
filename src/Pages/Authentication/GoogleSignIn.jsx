@@ -10,15 +10,13 @@ const GoogleSignIn = () => {
     const handleSubmit = () =>{
         GoogleSignIn()
         .then(result=>{
-            console.log(result)
             const user ={
                 name: result.user?.displayName,
                 email: result.user?.email,
                 badge: 'bronze'
             }
             axiosPublic.post('/users',user)
-            .then(res=>{
-                console.log(res.data);
+            .then(()=>{
                 toast.success('Success')
                 navigate('/')
             })

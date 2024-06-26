@@ -1,8 +1,8 @@
-import background from "../../../assets/img/yurt6.jpg"
+
 
 const Banner = () => {
     return (
-        <div className="relative  pt-10" style={{backgroundImage:`url(${background})`}}>
+        <div className="relative  pt-10" style={{backgroundImage:`url(https://i.ibb.co/SwQ4ZpV/yurt6.jpg)`}}>
             <div className="absolute inset-x-0 bottom-0">
                 <svg
                     viewBox="0 0 224 12"

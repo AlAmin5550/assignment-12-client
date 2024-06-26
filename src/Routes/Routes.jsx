@@ -10,6 +10,20 @@ import AllMeals from "../Pages/AllMeals/AllMeals";
 import Dashboard from "../Pages/Dashboard/Dashboard";
 import AllUsers from "../Pages/Dashboard/Admin/AllUsers";
 import AddItems from "../Pages/Dashboard/Admin/AddItems";
+import MealDetails from "../Pages/MealDetails/MealDetails";
+import AdminProfile from "../Pages/Dashboard/Admin/AdminProfile";
+import UpcomingMeals from "../Pages/Dashboard/Admin/UpcomingMeals";
+import Upcoming from "../Pages/Upcoming/Upcoming";
+import ServeMeals from "../Pages/Dashboard/Admin/ServeMeals";
+import AllReviews from "../Pages/Dashboard/Admin/AllReviews";
+import MealsManage from "../Pages/Dashboard/Admin/MealsManage";
+import UpdateItem from "../Pages/Dashboard/Admin/UpdateItem";
+import UsersProfile from "../Pages/Dashboard/Users/UsersProfile";
+import PrivateRoutes from "./PrivateRoutes";
+import RequestedMeals from "../Pages/Dashboard/Users/RequestedMeals";
+import UserReviews from "../Pages/Dashboard/Users/UserReviews";
+import Payment from "../Pages/Payment/Payment";
+import PaymentHistory from "../Pages/Dashboard/Users/PaymentHistory";
 
   const router = createBrowserRouter([
     {
@@ -32,6 +46,18 @@ import AddItems from "../Pages/Dashboard/Admin/AddItems";
         {
           path:'allMeals',
           element:<AllMeals></AllMeals>
+        },
+        {
+          path:'/mealDetails/:id',
+          element:<MealDetails></MealDetails>
+        },
+        {
+          path:'/upcoming',
+          element:<Upcoming></Upcoming>
+        },
+        {
+          path:'/payment/:pack',
+          element:<PrivateRoutes><Payment></Payment></PrivateRoutes>
         }
       ]
     },
@@ -42,6 +68,21 @@ import AddItems from "../Pages/Dashboard/Admin/AddItems";
       children:[
         // User routes
         {
+          path:'usersHome',
+          element: <PrivateRoutes><UsersProfile></UsersProfile></PrivateRoutes>
+
+        },
+        {
+          path:'usersRequests',
+          element:<PrivateRoutes><RequestedMeals></RequestedMeals></PrivateRoutes>
+        },
+        {
+          path:'usersReviews',
+          element:<PrivateRoutes><UserReviews></UserReviews></PrivateRoutes>
+        },
+        {
+          path:'userPayments',
+          element:<PrivateRoutes><PaymentHistory></PaymentHistory></PrivateRoutes>
 
         },
         // Admin Routes
@@ -53,6 +94,31 @@ import AddItems from "../Pages/Dashboard/Admin/AddItems";
         {
           path:'addItem',
           element:<AddItems></AddItems>
+        },
+        {
+          path:'adminHome',
+          element:<AdminProfile></AdminProfile>
+        },
+        {
+          path:'upcomingMeals',
+          element:<UpcomingMeals></UpcomingMeals>
+        },
+        {
+          path:'serveMeals',
+          element:<ServeMeals></ServeMeals>
+        },
+        {
+          path:'allReviews',
+          element:<AllReviews></AllReviews>
+        },
+        {
+          path:'manageMeals',
+          element:<MealsManage></MealsManage>
+        },
+        {
+          path:'manageMeals/updateMeals/:id',
+          element:<UpdateItem></UpdateItem>,
+          loader:({params})=> fetch(`http://localhost:5000/meal/${params.id}`)
         }
       ]
     }
