@@ -10,6 +10,8 @@ Currently, two official plugins are available:
 # Admin Credentials
 Mail: admin@15gmail.com
 password: Admin@15
+mail: test@15gmail.com
+pass: Test@15
 
 # Points of my website
    - You can request each meal

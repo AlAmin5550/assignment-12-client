@@ -32,21 +32,22 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             // console.log('Observing current user', currentUser);
-            const userEmail = currentUser?.email || user?.email;
-            const userInfo = { email: userEmail };
-            if(currentUser){
-                axiosPublic.post('/jwt',userInfo)
-                .then(()=>{
-                })
+            if (currentUser) {
+                const userInfo = {email: currentUser.email}
+                axiosPublic.post('/jwt', userInfo)
+                    .then(res => {
+                        if (res.data.token) {
+                            localStorage.setItem('access-token', res.data.token);
+                            setLoading(false);
+                        }
+                    })
             }
-            else{
-                axiosPublic.post('/logout',userInfo)
-                .then(()=>{
-
-                })
+            else {
+                localStorage.removeItem('access-token');
+                setLoading(false);
             }
-            setLoading(false);
             setUser(currentUser);
+
 
         });
         return () => {

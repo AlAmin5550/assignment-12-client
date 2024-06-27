@@ -3,18 +3,30 @@ import Banner from './Sections/Banner';
 import MealsSection from './Sections/MealsSection';
 import Features from './Sections/Features';
 import Pricing from './Sections/Pricing';
+import { useRef } from 'react';
 
 const Home = () => {
+    const pricing = useRef(null);
+    const scrollToSection = (elementRef) => {
+        window.scrollTo({
+            top: elementRef.current.offsetTop,
+            behavior: "smooth",
+        })
+    }
     return (
         <div>
             <Helmet>
                 <title>uniLodge | Home</title>
             </Helmet>
-            <Banner></Banner>
+            <Banner scrollToSection={scrollToSection} pricing={pricing}></Banner>
             <MealsSection></MealsSection>
             <Features></Features>
-            <Pricing></Pricing>
-            
+            <div ref={pricing}>
+                <Pricing></Pricing>
+
+            </div>
+
+
         </div>
     );
 };

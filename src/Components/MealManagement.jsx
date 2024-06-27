@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import useAxiosPublic from "../Hooks/useAxiosPublic";
 import { useEffect, useState } from "react";
 import { IoTrash } from "react-icons/io5";
 import useAxiosSecure from "../Hooks/useAxiosSecure";
@@ -10,20 +9,19 @@ const MealManagement = ({ meal, idx, refetch }) => {
     const { _id, name, distributor } = meal;
     const [likes, setLikes] = useState([]);
     const [reviews, setReviews] = useState([]);
-    const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
     useEffect(() => {
-        axiosPublic.get(`/likes/${_id}`)
+        axiosSecure.get(`/likes/${_id}`)
             .then(res => {
                 setLikes(res.data)
             })
-    }, [_id, axiosPublic])
+    }, [_id, axiosSecure])
     useEffect(() => {
-        axiosPublic.get(`/reviews/${_id}`)
+        axiosSecure.get(`/reviews/${_id}`)
             .then(res => {
                 setReviews(res.data)
             })
-    }, [_id, axiosPublic])
+    }, [_id, axiosSecure])
     const handleDelete = () => {
         Swal.fire({
             title: "Are you sure?",
