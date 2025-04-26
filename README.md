@@ -23,4 +23,4 @@ pass: Test@15
    - the admin dashboard can see and control meals reviews and also can upgrade users to admin
    - the admin can accept the requested meals 
 # live link
-https://unilodge-97853.web.app https://unilodge-97853.firebaseapp.com
+https://667d8cc2556142015c69a44c--heroic-malabi-1fb988.netlify.app/
